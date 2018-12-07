@@ -13,7 +13,7 @@ class Alumno(models.Model):
 
 class Materia(models.Model):
     nombre = models.CharField("Nombre",max_length=255, blank=False, null=False)
-    alumnos = models.ManyToManyField(Alumno, through='Notas')
+    #alumnos = models.ManyToManyField(Alumno, through='Notas')
     class Meta:
         verbose_name_plural = "Materias"
         verbose_name = "Materia"
@@ -21,7 +21,7 @@ class Materia(models.Model):
         return self.nombre
 
 
-class Notas(models.Model):
+class Nota(models.Model):
     alumno = models.ForeignKey(Alumno, on_delete=models.CASCADE)
     materia = models.ForeignKey(Materia, on_delete=models.CASCADE)
     exam_date = models.DateField("Fecha de Examen", blank=False, null=False)

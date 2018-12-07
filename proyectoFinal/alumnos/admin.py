@@ -1,5 +1,5 @@
 from django.contrib import admin
-from alumnos.models import Alumno,Materia,Notas
+from alumnos.models import Alumno,Materia,Nota
 
 @admin.register(Alumno)
 class AlumnoAdmin(admin.ModelAdmin):
@@ -12,8 +12,8 @@ class AlumnoAdmin(admin.ModelAdmin):
 class MateriaAdmin(admin.ModelAdmin):
     list_display = ('nombre',)
     pass
-@admin.register(Notas)
-class NotasAdmin(admin.ModelAdmin):
+@admin.register(Nota)
+class NotaAdmin(admin.ModelAdmin):
     list_display = ('alumno','materia','calificacion','exam_date')
     pass
 
