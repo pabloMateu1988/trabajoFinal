@@ -4,5 +4,7 @@ from alumnos import views
 from . import views
 
 urlpatterns = [
-    path('alumnos/',views.alumno_list),
+    path('alumnos/',views.alumnos_list),
+    path('materias/',views.materias_list),
+    path('notas/',views.notas_list),
 ]
